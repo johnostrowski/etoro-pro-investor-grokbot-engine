@@ -32,11 +32,11 @@ comments, not in the draft.
 The team is always on. The bar raiser runs when you start it, so give it a trigger: a sweep you ask
 for, or a scheduled session the day before your review block.
 
-## What moves to the bar raiser
+## The reports get the hardest check
 
-**The promises.** Monthly report, mid-month update, quarterly review, annual letter. Every number
-in them comes from a fresh pull, so at level 2 the bar raiser writes the first draft and the team
-supplies the facts.
+Monthly report, mid-month update, quarterly review, annual letter. The team still writes the first
+draft. The bar raiser **pulls every number again itself**, never trusting a figure in the draft, and
+you check them once more on the day you post. A just-closed month can be restated a day later.
 
 ## Starting it
 

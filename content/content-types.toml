@@ -13,7 +13,7 @@
 # owner      = the seat accountable for the type shipping. On a Starter team the Content Lead
 #              holds the cmo and cco seats.
 # fuel       = who supplies the raw material.
-# first_draft = "team" or "owner". At level 2 the promises move to the bar raiser.
+# first_draft = "team" or "owner". At level 2 the bar raiser re-pulls every number in a report.
 # bar_raiser = "level-2" where a second check applies once you add it; see system/bar-raiser.md.
 
 version = "1.0"
