@@ -1,0 +1,395 @@
+# Content type registry — the single source for WHAT ships and WHEN.
+#
+# Read by your agents before they plan a week, and by tools/content_strategy/build.py, which sums
+# the hours and writes tiers.md. Change a cadence here first, then run the script.
+#
+# minutes    = your own time per piece (review, record, post, reply to comments). Drafting time
+#              is the team's and is not counted. Treat every figure as an estimate until you have
+#              a quarter of Monday logs.
+# per_month  = pieces per month (4.33 = weekly, 2.17 = every two weeks, 0.33 = quarterly).
+# shelf_days = how long a draft may wait in Review before it is reworked. 0 = never expires.
+# status     = "active" | "paused" | "gated". Gated types are listed but not counted: check your
+#              platform's rule first (the copy invite is a call to action).
+# owner      = the seat accountable for the type shipping. On a Starter team the Content Lead
+#              holds the cmo and cco seats.
+# fuel       = who supplies the raw material.
+# first_draft = "team" or "owner". At level 2 the promises move to the bar raiser.
+# bar_raiser = "level-2" where a second check applies once you add it; see system/bar-raiser.md.
+
+version = "1.0"
+updated = "2026-11-15"
+
+[tiers.starter]
+label = "Starter"
+cap_hours_per_week = 3
+promise = "The promises and one habit. Nothing else."
+
+[tiers.core]
+label = "Core"
+cap_hours_per_week = 5
+promise = "Adds the weekly clip reaction, video on the monthly, the question series, dated milestones and a second reply session."
+
+[tiers.full]
+label = "Full"
+cap_hours_per_week = 8
+promise = "Adds the eToro long form every two weeks, the video episodes, a third reply session, every earnings check and four event campaigns."
+
+[[types]]
+id = "monthly-report"
+name = "Monthly report"
+layer = "promise"
+pillar = "performance"
+status = "active"
+slot = "First trading day of the month, for the month just closed"
+lead_channel = "etoro"
+channels = ["etoro", "x", "linkedin"]
+first_draft = "team"
+owner = "cmo"
+fuel = "cio"
+bar_raiser = "level-2"
+row_prefix = "<Fund> — <Month YYYY> report"
+shelf_days = 0
+scope = "engine"
+tiers = { starter = { per_month = 1, minutes = 120 }, core = { per_month = 1, minutes = 150 }, full = { per_month = 1, minutes = 150 } }
+
+[[types]]
+id = "report-video"
+name = "Report video"
+layer = "promise"
+pillar = "performance"
+status = "active"
+slot = "Within 48 hours of the monthly report"
+lead_channel = "x"
+channels = ["x", "etoro", "linkedin"]
+first_draft = "team"
+owner = "cmo"
+fuel = "cio"
+bar_raiser = "level-2"
+row_prefix = "<Fund> — <Month YYYY> report (video)"
+shelf_days = 0
+scope = "engine"
+tiers = { core = { per_month = 1, minutes = 90 }, full = { per_month = 1, minutes = 90 } }
+
+[[types]]
+id = "mid-month-update"
+name = "Mid-month update"
+layer = "promise"
+pillar = "performance"
+status = "active"
+slot = "The 15th. Writing only"
+lead_channel = "etoro"
+channels = ["etoro", "x", "linkedin"]
+first_draft = "team"
+owner = "cmo"
+fuel = "cio"
+bar_raiser = "level-2"
+row_prefix = "<Fund> — <Month YYYY> mid-month update"
+shelf_days = 0
+scope = "engine"
+tiers = { starter = { per_month = 1, minutes = 60 }, core = { per_month = 1, minutes = 75 }, full = { per_month = 1, minutes = 75 } }
+
+[[types]]
+id = "quarterly-review"
+name = "Quarterly review"
+layer = "promise"
+pillar = "performance"
+status = "active"
+slot = "First week of January, April, July and October, after that month's report"
+lead_channel = "etoro"
+channels = ["etoro", "x", "linkedin"]
+first_draft = "team"
+owner = "cmo"
+fuel = "cio"
+bar_raiser = "level-2"
+row_prefix = "<Fund> — Q<N> YYYY review"
+shelf_days = 0
+scope = "engine"
+tiers = { core = { per_month = 0.33, minutes = 180 }, full = { per_month = 0.33, minutes = 180 } }
+
+[[types]]
+id = "annual-letter"
+name = "Annual letter"
+layer = "promise"
+pillar = "performance"
+status = "active"
+slot = "January, for the year just closed"
+lead_channel = "substack"
+channels = ["substack", "linkedin", "etoro", "x"]
+first_draft = "team"
+owner = "cmo"
+fuel = "cio"
+bar_raiser = "level-2"
+row_prefix = "<Fund> — YYYY annual letter"
+shelf_days = 0
+scope = "engine"
+tiers = { full = { per_month = 0.083, minutes = 300 } }
+
+[[types]]
+id = "weekly-quote"
+name = "Weekly Quote"
+layer = "series"
+pillar = "educational"
+status = "active"
+slot = "Tuesday morning"
+lead_channel = "x"
+channels = ["x", "etoro"]
+first_draft = "team"
+owner = "cmo"
+fuel = "librarian"
+bar_raiser = "level-2"
+row_prefix = "Weekly Quote — <Author>, \"<first words>\""
+shelf_days = 14
+scope = "engine"
+tiers = { starter = { per_month = 4.33, minutes = 20 }, core = { per_month = 4.33, minutes = 20 }, full = { per_month = 4.33, minutes = 20 } }
+
+[[types]]
+id = "evergreen-question"
+name = "Evergreen Question"
+layer = "series"
+pillar = "engagement"
+status = "active"
+slot = "Thursday, in the weeks of the monthly report and the mid-month update"
+lead_channel = "x"
+channels = ["x", "etoro"]
+first_draft = "team"
+owner = "cmo"
+fuel = "analyst"
+bar_raiser = "level-2"
+row_prefix = "Evergreen Question Q<N> — <short question>"
+shelf_days = 14
+scope = "engine"
+tiers = { core = { per_month = 2, minutes = 40 }, full = { per_month = 2, minutes = 40 } }
+
+[[types]]
+id = "holding-anniversary"
+name = "Holding Anniversary"
+layer = "series"
+pillar = "performance"
+status = "active"
+slot = "On the date a position turns 1, 2, 3, 5, 7 or 10 years"
+lead_channel = "x"
+channels = ["x", "etoro", "linkedin"]
+first_draft = "team"
+owner = "cmo"
+fuel = "cio"
+bar_raiser = "level-2"
+row_prefix = "Holding Anniversary — <N> years $<TICKER>"
+shelf_days = 7
+scope = "engine"
+tiers = { core = { per_month = 1, minutes = 30 }, full = { per_month = 1, minutes = 30 } }
+
+[[types]]
+id = "clip-reaction"
+name = "Clip reaction"
+layer = "series"
+pillar = "educational"
+status = "active"
+slot = "Friday, or the day the clip airs. A short clip from a broadcast, credited, with your take"
+lead_channel = "x"
+channels = ["x", "etoro", "linkedin"]
+first_draft = "owner"
+owner = "cmo"
+fuel = "owner"
+bar_raiser = "level-2"
+row_prefix = "<Channel>: <Speaker> clip, <the point in one line>"
+shelf_days = 3
+scope = "engine"
+tiers = { core = { per_month = 4.33, minutes = 40 }, full = { per_month = 4.33, minutes = 40 } }
+
+[[types]]
+id = "x-video-episode"
+name = "X video episode"
+layer = "series"
+pillar = "educational"
+status = "active"
+slot = "Thursday, in the weeks between the reports. Vertical, three minutes at most"
+lead_channel = "x"
+channels = ["x", "etoro", "linkedin"]
+first_draft = "team"
+owner = "cmo"
+fuel = "market-news"
+bar_raiser = "level-2"
+row_prefix = "X Video #<N>: <title>"
+shelf_days = 5
+scope = "engine"
+tiers = { full = { per_month = 2, minutes = 150 } }
+
+[[types]]
+id = "breaking-my-take"
+name = "Breaking + my take"
+layer = "reactive"
+pillar = "educational"
+status = "active"
+slot = "Within 48 hours of news that touches a holding or a standing theme"
+lead_channel = "x"
+channels = ["x", "etoro", "linkedin"]
+first_draft = "team"
+owner = "cmo"
+fuel = "market-news"
+bar_raiser = "level-2"
+row_prefix = "<Channel>: <the claim in one line>"
+shelf_days = 2
+scope = "engine"
+tiers = { starter = { per_month = 4, minutes = 30 }, core = { per_month = 2, minutes = 30 }, full = { per_month = 4, minutes = 30 } }
+
+[[types]]
+id = "earnings-check"
+name = "Earnings check"
+layer = "reactive"
+pillar = "performance"
+status = "active"
+slot = "After a top holding reports, never before. Within five trading days"
+lead_channel = "x"
+channels = ["x", "etoro"]
+first_draft = "team"
+owner = "cmo"
+fuel = "research"
+bar_raiser = "level-2"
+row_prefix = "<Channel>: <result in one line>. Why I'm holding and watching (<TICKER> <period>)"
+shelf_days = 7
+scope = "engine"
+tiers = { core = { per_month = 1, minutes = 30 }, full = { per_month = 1.67, minutes = 30 } }
+
+[[types]]
+id = "practitioner-note"
+name = "Practitioner note"
+layer = "reactive"
+pillar = "educational"
+status = "active"
+slot = "On demand, for a company you use at work but do not hold. Say in the post that you do not own it"
+lead_channel = "linkedin"
+channels = ["linkedin", "x", "etoro"]
+first_draft = "team"
+owner = "cmo"
+fuel = "owner"
+bar_raiser = "level-2"
+row_prefix = "<TICKER> <period> — practitioner note"
+shelf_days = 7
+scope = "engine"
+tiers = { full = { per_month = 0.5, minutes = 45 } }
+
+[[types]]
+id = "event-campaign"
+name = "Event campaign"
+layer = "campaign"
+pillar = "engagement"
+status = "active"
+slot = "Around an event: at least three picture posts on X and one short video, then a recap"
+lead_channel = "x"
+channels = ["x", "linkedin", "etoro"]
+first_draft = "team"
+owner = "chief-of-staff"
+fuel = "travel-planner"
+bar_raiser = "level-2"
+row_prefix = "<Event> — campaign"
+shelf_days = 3
+scope = "engine"
+tiers = { core = { per_month = 0.17, minutes = 240 }, full = { per_month = 0.33, minutes = 240 } }
+
+[[types]]
+id = "reply-session"
+name = "Reply session"
+layer = "habit"
+pillar = "engagement"
+status = "active"
+slot = "Monday, Wednesday, Friday. Thirty minutes under larger accounts, then post an original"
+lead_channel = "x"
+channels = ["x"]
+first_draft = "team"
+owner = "cmo"
+fuel = "analyst"
+bar_raiser = "none"
+row_prefix = ""
+shelf_days = 0
+scope = "engine"
+tiers = { starter = { per_month = 4.33, minutes = 30 }, core = { per_month = 8.66, minutes = 30 }, full = { per_month = 13, minutes = 30 } }
+
+[[types]]
+id = "profile-pins"
+name = "Profile and pins"
+layer = "evergreen"
+pillar = "promotional"
+status = "active"
+slot = "Refreshed in the first week of each quarter"
+lead_channel = "etoro"
+channels = ["etoro", "x", "linkedin", "substack"]
+first_draft = "team"
+owner = "cmo"
+fuel = "cco"
+bar_raiser = "level-2"
+row_prefix = "<Fund> — <pin name>"
+shelf_days = 0
+scope = "engine"
+tiers = { starter = { per_month = 0.33, minutes = 30 }, core = { per_month = 0.33, minutes = 30 }, full = { per_month = 0.33, minutes = 30 } }
+
+[[types]]
+id = "metrics-log"
+name = "Monday metrics log"
+layer = "ops"
+pillar = "none"
+status = "active"
+slot = "Monday"
+lead_channel = "notion"
+channels = ["notion"]
+first_draft = "team"
+owner = "analyst"
+fuel = "analyst"
+bar_raiser = "level-2"
+row_prefix = ""
+shelf_days = 0
+scope = "engine"
+tiers = { starter = { per_month = 4.33, minutes = 10 }, core = { per_month = 4.33, minutes = 10 }, full = { per_month = 4.33, minutes = 10 } }
+
+[[types]]
+id = "monthly-audit"
+name = "Monthly audit"
+layer = "ops"
+pillar = "none"
+status = "active"
+slot = "First week of the month"
+lead_channel = "notion"
+channels = ["notion"]
+first_draft = "team"
+owner = "analyst"
+fuel = "analyst"
+bar_raiser = "level-2"
+row_prefix = ""
+shelf_days = 0
+scope = "engine"
+tiers = { starter = { per_month = 1, minutes = 15 }, core = { per_month = 1, minutes = 15 }, full = { per_month = 1, minutes = 30 } }
+
+[[types]]
+id = "etoro-long-form"
+name = "eToro long form"
+layer = "series"
+pillar = "performance"
+status = "active"
+slot = "Monday, in the weeks between the reports. About 400 words, from the week's data pages"
+lead_channel = "etoro"
+channels = ["etoro"]
+first_draft = "team"
+owner = "cmo"
+fuel = "cio"
+bar_raiser = "level-2"
+row_prefix = "<Fund> — Weeks <dates>"
+shelf_days = 5
+scope = "engine"
+tiers = { full = { per_month = 2.17, minutes = 45 } }
+
+[[types]]
+id = "copy-invite"
+name = "How I run it (copy invite)"
+layer = "series"
+pillar = "promotional"
+status = "gated"
+slot = "One in ten posts once the gate opens; two in ten in the second half of the year"
+lead_channel = "etoro"
+channels = ["etoro", "x", "linkedin"]
+first_draft = "team"
+owner = "cmo"
+fuel = "cio"
+bar_raiser = "level-2"
+row_prefix = "<Fund> — How I run it"
+shelf_days = 14
+scope = "engine"
+tiers = { starter = { per_month = 1, minutes = 30 }, core = { per_month = 2, minutes = 30 }, full = { per_month = 2, minutes = 30 } }
