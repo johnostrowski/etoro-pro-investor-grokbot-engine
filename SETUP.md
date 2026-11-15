@@ -1,4 +1,8 @@
-# Setup — level 1
+# Setup — the marketing side, level 1
+
+The investing side has its own guide: [`investing/README.md`](investing/README.md). Build either
+first. If you build both, the desk's Chief Investment Officer and Market News are the same bots
+this guide mentions.
 
 About an hour for the Starter team. You need a Grok account that can run bots, a Notion workspace,
 and your trading account connected **read-only**.

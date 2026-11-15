@@ -13,10 +13,13 @@ and `fuel` fields in [`../content/content-types.toml`](../content/content-types.
 | **Content Specialist** | First drafts, lead channel plus cuts | Held by the Content Lead |
 | **Market News** (`market-news`) | Sourced facts and dates. Never pitches, never files a row | Yes |
 | **Marketing Business Analyst** (`analyst`) | The Monday log, the monthly audit, the question bank | A monthly routine |
-| **Chief Investment Officer** (`cio`) | Fund facts from a fresh pull. Decides what facts reach content | Optional |
-| **Research** (`research`) | A thesis check after a holding reports | Optional |
+| **Chief Investment Officer** (`cio`) | Heads the investing desk. Fund facts from a fresh pull. Decides what facts reach content | Optional here; see [`../investing/`](../investing/README.md) |
+| **Research** (`research`) | A thesis check after a holding reports | Optional here |
 | **Chief Product Officer** (`cpo`) | Your apps and products, if you ship any | Optional |
 | **Librarian** (`librarian`) | Your saved quotes, verbatim | Optional |
+
+The investing desk (Chief Investment Officer, Research, Market News, the council) is described in
+[`../investing/`](../investing/README.md). It hands this team facts, never pitches.
 
 The content team can serve more than one brand. The CMO sets priorities for the fund; the CCO sets
 the standard for everything.

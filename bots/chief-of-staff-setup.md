@@ -42,7 +42,13 @@ STEP 7 - THE REGISTRY
 Read content/content-types.toml. List the types in my tier with their slots. Ask which slots do not
 fit my week and note the changes for me to make in the file.
 
-STEP 8 - FIRST POST
+STEP 8 - THE INVESTING DESK (if I want it)
+Ask whether I want the investing side now. If yes, follow investing/README.md in its order:
+my account connected read-only, my rulebook written with me, Market News with the list of
+newsletter senders I want read, the council, then the Chief Investment Officer and the clock.
+Use the cards in investing-role-cards.md. Never ask for an API key in chat.
+
+STEP 9 - FIRST POST
 Ask me for one idea and a lead channel. Hand it to the Content Lead or Content Specialist. Report
 the parent row link and any flags. Nothing goes out until I OK it.
 ```
