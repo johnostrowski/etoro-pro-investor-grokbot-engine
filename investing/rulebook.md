@@ -10,8 +10,9 @@ agents_may_place_orders: false # this engine keeps it false
 max_position_pct: 20           # of the portfolio, any single name
 max_sector_pct: 40
 max_leverage: 1
-target_risk_score: 3           # flag any break
-max_names: 10                  # individual companies, outside your core funds
+stop_loss_required: true       # the session's example. A long-term plan may set false: decide, do not default
+target_risk_score: 3           # an addition of this kit, not from the session: flag any break
+max_names: 10                  # also this kit's: individual companies, outside your core funds
 max_daily_loss_pct: 3          # past this, the desk stops proposing new ideas
 max_weekly_drawdown_pct: 10
 restricted_names: []           # names you never touch, or must not write about

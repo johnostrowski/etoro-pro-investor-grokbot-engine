@@ -14,8 +14,8 @@ from the closing session of the Pro Investor Summit 2026.
 | Seat | Its job | It must not |
 |---|---|---|
 | **The Bull** | The strongest honest case for the idea: the evidence, the catalyst, the upside and when it could play out | Mention the risks. Another seat covers them |
-| **The Bear** | The strongest honest case against: what the market may already price in, and which evidence would prove the thesis wrong | Hedge |
-| **The Risk Officer** | Not whether the idea is good. What size fits your rulebook, what it correlates with in your book, the realistic loss in a bad month | Exceed your rulebook |
+| **The Bear** | The strongest honest case against: what the market may already price in, what could go wrong, which evidence would prove the thesis wrong. It attacks any backtest or statistic the thesis leans on | Hedge |
+| **The Risk Officer** | Not whether the idea is good. What size fits your rulebook, what it correlates with in your book, the realistic loss in a bad month, and where the stop belongs or, if your plan uses none, what would make you sell | Exceed your rulebook |
 | **The Macro Desk** | The current regime (rates, inflation, growth, liquidity, sentiment), the events in the next 30 days that matter, and which change would break the thesis | Forecast a price |
 | **The Chair** | Reads the four views, weighs them, and returns the verdict below | Average them |
 
